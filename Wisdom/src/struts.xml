@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="utf-8"/>
+
+    <package name="default" extends="struts-default">
+        <action name="LoginAction" method="loginUser" class="com.wh.web.LoginAction">
+		 	<result name="success">/index.jsp</result>
+		 	<result name="fail">/error.jsp</result>
+        </action><action name="LogoutAction" method="logoutUser" class="com.wh.web.LoginAction">
+		 	<result name="success">/index.jsp</result>
+		 	<result name="fail">/error.jsp</result>
+        </action>
+        <action name="RegistAction" method="registUser" class="com.wh.web.LoginAction">
+		 	<result name="success_Doctor">/doctorInfoEdit.jsp</result>
+		 	<result name="success_Patient">/patientInfoEdit.jsp</result>
+		 	<result name="fail">/error.jsp</result>
+        </action>
+        <action name="RegistPatientAction" method="editPatient" class="com.wh.web.PatientAction">
+		 	<result name="success">/login.jsp</result>
+		 	<result name="fail">/error.jsp</result>
+        </action>
+        <action name="DocPerInfoAction" method="getInfo" class="com.wh.web.DoctorAction">
+		 	<result name="success_Doctor">/doctorInfo.jsp</result>
+		 	<result name="fail">/error.jsp</result>
+        </action>
+        <action name="PatPerInfoAction" method="getInfo" class="com.wh.web.PatientAction">
+		 	<result name="success_Patient">/patientInfo.jsp</result>
+		 	<result name="fail">/error.jsp</result>
+        </action>
+        <action name="myPatientsAction" method="getPatients" class="com.wh.web.DoctorAction">
+		 	<result name="success">/myPatients.jsp</result>
+		 	<result name="fail">/error.jsp</result>
+        </action>
+        <action name="reminderAction" method="remind" class="com.wh.web.PatientAction">
+		 	<result name="success">/reminder.jsp</result>
+		 	<result name="fail">/error.jsp</result>
+        </action>
+        <action name="DrugNameSearchAction" method="searchDrugByName" class="com.wh.web.DrugAction">
+		 	<result name="success">/drugInfo.jsp</result>
+		 	<result name="fail">/error.jsp</result>
+        </action>
+         <action name="scanQRCodeAction" method="scanQRCode" class="com.wh.web.QUCodeAction">
+		 	<result name="success">/scanQrCode.jsp</result>
+		 	<result name="fail">/error.jsp</result>
+        </action>
+        
+        <action name="EHRInfoAction" method="getEHR" class="com.wh.web.PatientAction">
+		 	<result name="success">/myEhrs.jsp</result>
+		 	<result name="fail">/error.jsp</result>
+        </action>
+    </package>
+</struts>
